@@ -5,6 +5,7 @@
 - Age
 
 2- Recipe Object
-- Titre
-- Description
+- Title
+- Author
 - Activation status
+- Instruction
