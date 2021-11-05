@@ -14,6 +14,8 @@
     <div class="container">
 
     <?php include_once('header.php'); ?>
+    <?php include('variables.php'); ?>
+    <?php include('functions.php'); ?>
         <h1>Site de Recettes !</h1>
 
         <?php foreach(get_recipes($recipes, $limit) as $recipe) : ?>
