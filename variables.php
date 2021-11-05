@@ -1,4 +1,5 @@
 <?php
+
 $users = [
     [
         'full_name' => 'Mickaël Andrieu',
@@ -43,3 +44,9 @@ $recipes = [
         'is_enabled' => false,
     ],
 ];
+
+if(isset($_GET['limit']) && is_numeric($_GET['limit'])) {
+    $limit = (int) $_GET['limit'];
+} else {
+    $limit = 100;
+}
