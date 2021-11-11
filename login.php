@@ -32,21 +32,15 @@ if (isset($postData['email']) &&  isset($postData['password'])) {
     }
 }
 
-if (isset($_COOKIE['LOGGED_USER'])) {
+if (isset($_COOKIE['LOGGED_USER']) || isset($_SESSION['LOGGED_USER'])) {
     $loggedUser = [
-        'email' => $_COOKIE['LOGGED_USER'],
-    ];
-}
-
-if (isset($_SESSION['LOGGED_USER'])) {
-    $loggedUser = [
-        'email' => $_SESSION['LOGGED_USER'],
+        'email' => $_COOKIE['LOGGED_USER'] ?? $_SESSION['LOGGED_USER'],
     ];
 }
 ?>
 
 <?php if(!isset($loggedUser)): ?>
-<form action="home.php" method="post">
+<form action="index.php" method="post">
     <?php if(isset($errorMessage)) : ?>
         <div class="alert alert-danger" role="alert">
             <?php echo($errorMessage); ?>
