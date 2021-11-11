@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,8 +15,8 @@
     <div class="container">
 
     <?php include_once('header.php'); ?>
-    <?php include('variables.php'); ?>
-    <?php include('functions.php'); ?>
+
+    <?php include_once('login.php'); ?>
         <h1>Site de Recettes !</h1>
 
         <?php foreach(get_recipes($recipes, $limit) as $recipe) : ?>
